@@ -5,7 +5,7 @@ export {
   index,
   create,
   show,
- commet
+  commet
 }
 
 function commet(req, res) {

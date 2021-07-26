@@ -1,21 +1,21 @@
-  <% if (!user) { %>
+
+
     <link rel="stylesheet" href="/stylesheets/siwg.css">
-  <% } %>
-</head>
+
 <body>
   <nav>
-    <% if (user) { %>
+   
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
-    <% } else { %>
+   
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
           <img id="siwg-image" alt="Sign in with Google" />
         </button>
       </a>
-    <% } %>
-    <% if (user) { %>
+  
+
       <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
         <a href="/profiles" >
           View Users
@@ -26,5 +26,5 @@
           Topics 
         </a>
       </li>
-    <% } %>
+  
   </nav>
