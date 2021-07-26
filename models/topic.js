@@ -12,11 +12,11 @@ const commetSchema = new Schema({
   timestamps: true
 })
 
-const commetSchema = new Schema({
+const topicSchema = new Schema({
   title: String,
   content: String,
   author: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  replies: [replySchema]
+  commete: [commetSchema]
 },{
   timestamps: true,
 })

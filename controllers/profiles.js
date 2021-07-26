@@ -5,7 +5,8 @@ export {
   index,
   edit,
   update,
-  getName
+  getName,
+  show
 }
 function getName(req, res) {
   Profile.findById(req.user.profile)
@@ -46,5 +47,24 @@ function index(req, res) {
       title: "Happy Places",
       profiles,
     })
+  })
+}
+
+function show(req, res) {
+  Profile.findById(req.params.id)
+
+  .then(profile => {
+      Profile.findById(req.user.profile)
+      .then(userProfile => {
+        res.render('profiles/show', {
+          profile,
+          userProfile,
+          title: `${profile.name}'s profile`,
+        })
+      })
+    })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
