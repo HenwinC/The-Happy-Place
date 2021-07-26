@@ -18,7 +18,7 @@ function commet(req, res) {
   req.body.author = req.user.profile._id
   Topic.findById(req.params.id)
   .then(topic => {
-    topic.replies.push(req.body)
+    topic.comments.push(req.body)
     topic.save()
     .then(() => {
       res.redirect(`/topics/${req.params.id}`)
@@ -30,7 +30,7 @@ function show(req, res) {
   Topic.findById(req.params.id)
   .populate('author')
   .populate({
-    path: 'replies',
+    path: 'commets',
     populate: {
       path: 'author'
     }
