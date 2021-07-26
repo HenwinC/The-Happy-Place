@@ -60,6 +60,13 @@
             Keep reading...
           </a>
         </p>
+        <form 
+          action="/topics/<%= topics._id %>?_method=DELETE"
+          class='delete-form'
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
       </div>
     </section>
   <% }) %>

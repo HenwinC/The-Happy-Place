@@ -5,7 +5,13 @@ export {
   index,
   create,
   show,
-  commet
+  commet,
+  deleteTopic as delete
+}
+function deleteTopic(req, res) {
+  Topic.findByIdAndDelete(req.params.id, function (error, Topic) {
+    res.redirect('/topics')
+  })
 }
 
 function commet(req, res) {
