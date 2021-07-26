@@ -1,0 +1,73 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main class="container">
+  <h1 class="my-3"><%= title %></h1>
+  <section class="p-4 p-md-5 mb-4 text-white rounded bg-dark mx-4">
+    <div class="col-md-8 text-light px-0">
+      <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
+      <h4 class="mb-0 fs-5 fst-italic">
+        written by 
+        <a 
+          href="/profiles/<%= topic.author._id %>"
+          class="text-decoration-none text-light"
+        >
+          <%= topic.author.name %>
+          <img
+            src="<%= topic.author.avatar %>"
+            class="img-fluid rounded-circle"
+            alt="<%= topic.author.name %>'s avatar"
+            height="35"
+            width="35"
+          />
+        </a>
+      </h4>
+      <p class="fs-7 fst-italic">
+        on <%= topic.createdAt.toLocaleDateString() %>
+      </p>
+      <p class="lead my-3"><%= topic.content %> </p>
+    </div>
+  </section>
+  <form action="/topics/<%= topic._id %>" method="POST" class="mb-3">
+    <h2 class="mb-3">Write a commet</h2>
+    <div class="mb-3 mx-5">
+      <label for="commet-content" class="form-label">commet</label>
+      <textarea 
+        class="form-control" 
+        id="commet-content" 
+        rows="3" 
+        name="content"
+      ></textarea>
+    </div>
+    <button class="btn btn-primary ms-5" type="submit">Reply</button>
+  </form>
+  <% if (topic.commets.length) { %>
+    <h2 class="mb-3">All commets</h2>
+  <% } %>
+  <%# This is where we'll loop over and display commets %> 
+  <% topic.commets.reverse().forEach(commet => { %>
+    <section class="p-2 p-md-3 mb-3 rounded mx-4 border shadow-sm">
+      <div class="col-md-10 px-0">
+        <h4 class="mb-0 fs-5 fst-italic"> 
+          <a 
+            href="/profiles/<%= commet.author._id %>"
+            class="text-decoration-none text-dark"
+          >
+            <img
+              src="<%= commet.author.avatar %>"
+              class="img-fluid rounded-circle"
+              alt="<%= commet.author.name %>'s avatar"
+              height="35"
+              width="35"
+            />
+            <%= commet.author.name %>
+          </a>
+          on <%= commet.createdAt.toLocaleDateString() %>
+        </h4>
+        <p class="lead my-3"><%= commet.content %> </p>
+      </div>
+    </section>
+  <% }) %>
+</main>
+
+<%- include('../partials/footer') %>
