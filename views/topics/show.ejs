@@ -7,7 +7,7 @@
     <div class="col-md-8 text-light px-0">
       <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
       <h4 class="mb-0 fs-5 fst-italic">
-        written by 
+        From 
         <a 
           href="/profiles/<%= topic.author._id %>"
           class="text-decoration-none text-light"
@@ -44,7 +44,6 @@
   <% if (topic.commets.length) { %>
     <h2 class="mb-3">All commets</h2>
   <% } %>
-  <%# This is where we'll loop over and display commets %> 
   <% topic.commets.reverse().forEach(commet => { %>
     <section class="p-2 p-md-3 mb-3 rounded mx-4 border shadow-sm">
       <div class="col-md-10 px-0">
