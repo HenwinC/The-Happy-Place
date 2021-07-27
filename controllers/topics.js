@@ -10,7 +10,7 @@ export {
 }
 function deleteTopic(req, res) {
   Topic.findByIdAndDelete(req.params.id, function (error, Topic) {
-    res.redirect('/topics')
+    res.redirect('/topics/')
   })
 }
 
