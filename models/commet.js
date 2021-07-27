@@ -1,17 +1,12 @@
 import mongoose from 'mongoose'
-
 const Schema = mongoose.Schema
 
-export {
-	Topic
-}
-
-const topicSchema = new Schema({
-  title: String,
+const commentSchema = new Schema({
   content: String,
   author: {type: Schema.Types.ObjectId, ref: 'Profile'},
 },{
   timestamps: true,
 })
 
-const Topic = mongoose.model("Topic", topicSchema)
+
+const Comment = mongoose.model("Comment", messageSchema)
