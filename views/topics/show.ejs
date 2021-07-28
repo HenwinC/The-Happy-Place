@@ -11,8 +11,6 @@
       <p class="card-text"><%= topic.content %> </p>
       <p class="card-text"><small class="text-muted">Posted By: <%= topic.author.name %></small></p>
       <p class="card-text"><small class="text-muted"><%= topic.date %> </small></p>
-        <form  action="/topics/<%= topic._id %> ? _method=DELETE" class="delete-form" method="POST"></form>
-          <button type="submit">Delete Topic</button>
         <a href="/topics/<%= topic._id %>/edit">
           <button type="submit" class="btn btn-primary">Edit</button>
         </a>
