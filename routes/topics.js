@@ -7,11 +7,12 @@ export {
 
 const router = Router()
 
-router.get('/', isLoggedIn, topicsCtrl.index)
-router.post('/', isLoggedIn, topicsCtrl.create)
 router.get('/:id', isLoggedIn, topicsCtrl.show)
-router.post('/:id', isLoggedIn, topicsCtrl.commet)
+router.post('/', isLoggedIn, topicsCtrl.create)
+router.get('/', isLoggedIn, topicsCtrl.index)
 router.delete('/:id', isLoggedIn, topicsCtrl.delete)
+router.put('/:id', isLoggedIn, topicsCtrl.update)
+router.get('/:id/edit', isLoggedIn, topicsCtrl.edit)
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

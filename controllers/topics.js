@@ -5,32 +5,42 @@ export {
   index,
   create,
   show,
-  commet,
+  update,
+  edit,
   deleteTopic as delete
 }
-function deleteTopic(req, res) {
-  Topic.findByIdAndDelete(req.params.id, function (error, Topic) {
-    res.redirect('/topics/')
+
+function update(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
+  Topic.findByIdAndUpdate(req.params.id, req.body, function(err, post){
+    res.redirect('/topics')
   })
 }
 
-function commet(req, res) {
-  req.body.author = req.user.profile._id
-  Topic.findById(req.params.id)
-  .then(topic => {
-    topic.comments.push(req.body)
-    topic.save()
-    .then(() => {
-      res.redirect(`/topics/${req.params.id}`)
+function edit(req, res) {
+  Topic.findById(req.params.id, function(err, topic) {
+    res.render('topics/edit', {
+     topic,
+      err,
+      title: "Edit Topic"
     })
   })
 }
+
+function deleteTopic (req, res) {
+  Topic.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect('/topics')
+    })
+  }
 
 function show(req, res) {
   Topic.findById(req.params.id)
   .populate('author')
   .populate({
-    path: 'commets',
+    path: 'show',
     populate: {
       path: 'author'
     }

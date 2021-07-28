@@ -61,14 +61,21 @@
           </a>
         </p>
         <form 
-          action="/topics/<%= topics._id %>?_method=DELETE"
+          action="/topics <%= topics._id %> ? _method=DELETE"
           class='delete-form'
-          method="POST"
+          method="DELETE"
         >
-          <button class="btn btn-danger" type="submit">DELETE</button>
+          <button type="submit">DELETE</button>
         </form>
       </div>
     </section>
   <% }) %>
+  <form 
+  action="/topics <%= topics._id %> ? _method=DELETE"
+  class='delete-form'
+  method="DELETE"
+>
+  <button type="submit">DELETE</button>
+</form>
 </main>
 <%- include('../partials/footer') %>

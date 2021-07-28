@@ -23,6 +23,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as profilesRouter } from './routes/profiles.js'
 import { router as topicsRouter } from './routes/topics.js'
+import { router as commentsRouter } from './routes/commets.js'
 // view engine setup
 app.set(
   'views',
@@ -61,6 +62,7 @@ app.use(passport.session())
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
+app.use('/comments', commentsRouter)
 app.use('/topics', topicsRouter)
 
 // catch 404 and forward to error handler

@@ -1,10 +1,7 @@
-import { Comment } from '../models/comment.js'
+// import { Comment } from "../models/comment.js"
 
 export { 
-  index,
   create,
-  show,
-  
 }
 
 
@@ -13,7 +10,6 @@ function create(req, res) {
   req.body.author = req.user.profile._id
   Comment.create(req.body)
   .then(()=> {
-    res.redirect('/posts')
+    res.redirect('/topics')
   })
 }
-
