@@ -16,6 +16,7 @@ function update(req, res) {
   }
   Topic.findByIdAndUpdate(req.params.id, req.body, function(err, post){
     res.redirect('/topics')
+    // i need a way to save after update
   })
 }
 

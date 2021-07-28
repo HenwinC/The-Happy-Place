@@ -17,9 +17,10 @@
       <input name= "title" type="text" class="form-control" id="exampleFormControlInput1" value=<%=topic.title%>>
     </div>
     <div class="mb-3">
-      <label for="Description" class="form-label">Description</label>
-      <textarea name= "description" class="form-control" id="exampleFormControlTextarea1" rows="3" value=<%=topic.description%> ></textarea>
+      <label for="content" class="form-label">Description</label>
+      <textarea name= "content" class="form-control" id="exampleFormControlTextarea1" rows="3" value=<%=topic.content%> ></textarea>
     </div>
+     
     <a href="/topics/<%= topic._id %>"> 
       <button type="submit" class="btn btn-primary">Save</button>
       </a>
