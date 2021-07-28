@@ -18,14 +18,11 @@
     </div>
     <div class="mb-3">
       <label for="content" class="form-label">Description</label>
-      <textarea name= "content" class="form-control" id="exampleFormControlTextarea1" rows="3" value=<%=topic.content%> ></textarea>
-    </div>
-     
+      <textarea name= "content" type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" value=<%=topic.content%> ></textarea>
+    </div> 
     <a href="/topics/<%= topic._id %>"> 
       <button type="submit" class="btn btn-primary">Save</button>
       </a>
-    </a>
-  </form>
   </form>
 </body>
 </html>

@@ -16,7 +16,6 @@ function update(req, res) {
   }
   Topic.findByIdAndUpdate(req.params.id, req.body, function(err, post){
     res.redirect('/topics')
-    // i need a way to save after update
   })
 }
 
@@ -30,12 +29,11 @@ function edit(req, res) {
   })
 }
 
-function deleteTopic (req, res) {
-  Topic.findByIdAndDelete(req.params.id)
-    .then(() => {
-      res.redirect('/topics')
-    })
-  }
+function deleteTopic(req, res){
+  Topic.findByIdAndDelete(req.params.id, function(err, topic){
+    res.redirect('/topics')
+  })
+}
 
 function show(req, res) {
   Topic.findById(req.params.id)

@@ -27,18 +27,18 @@
     <section class="p-4 p-md-5 mb-4 text-white rounded bg-dark mx-4">
       <div class="col-md-8 text-light" px-0>
         <a 
-          href="/topics/<%= topic._id %>" 
-          class="text-decoration-none text-light"
+        href="/topics/<%= topic._id %>" 
+        class="text-decoration-none text-light"
         >
-          <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
-        </a>
-        <h4 class="mb-0 fs-5 fst-italic">
-          written by 
-          <a 
-            href="/profiles/<%= topic.author._id %>"
-            class="text-decoration-none text-light"
-          >
-            <%= topic.author.name %>
+        <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
+      </a>
+      <h4 class="mb-0 fs-5 fst-italic">
+        written by 
+        <a 
+        href="/profiles/<%= topic.author._id %>"
+        class="text-decoration-none text-light"
+        >
+        <%= topic.author.name %>
             <img
               src="<%= topic.author.avatar %>"
               class="img-fluid rounded-circle"
@@ -60,14 +60,18 @@
            Details 
           </a>
         </p>
-        <form 
-          action="/topics/ <%= topics._id %> ? _method=DELETE"
-          method="POST"
-        >
-       <button type="submit">DELETE</button>
-        </form>
       </div>
     </section>
   <% }) %>
+
 </main>
 <%- include('../partials/footer') %>
+
+<% posts.forEach(post => { %>
+  <a href="/posts/<%= post._id %>"><h2><%= post.title %></h2></a>
+  <h2><%= post.text %> </h2>
+  <h2>author: <%= post.author.name %> </h2>
+  <% if (user.profile._id.equals(post.author._id)) { %>
+      <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+      </form>
