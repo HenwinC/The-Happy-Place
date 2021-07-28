@@ -14,7 +14,7 @@ function update(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
-  Topic.findByIdAndUpdate(req.params.id, req.body, function(err, post){
+  Topic.findByIdAndUpdate(req.params.id, req.body, function(err, topic){
     res.redirect('/topics')
   })
 }
