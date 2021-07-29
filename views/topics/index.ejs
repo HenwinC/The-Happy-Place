@@ -33,34 +33,35 @@
         <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
       </a>
       <h4 class="mb-0 fs-5 fst-italic">
-        written by <%= topic.author.name %>
-            <img
-              src="<%= topic.author.avatar %>"
-              class="img-fluid rounded-circle"
-              alt="<%= topic.author.name %>'s avatar"
-              height="35"
-              width="35"
-            />
-          </a>
-          <form 
-          action="/topics/ <%= topics._id %>? _method=DELETE"
-          class="delete-form"
+        
+      </h4>
+      <p class="fs-7 fst-italic">
+        on <%= topic.createdAt.toLocaleDateString() %>
+      </p>
+      <p class="lead my-3"><%= topic.content %> </p>
+      <p>
+        <a
+        class="text-decoration-none text-light"
+        href="/topics/<%= topic._id %>"
+        >
+        Details 
+      </a>
+      written by <%= topic.author.name %>
+          <img
+            src="<%= topic.author.avatar %>"
+            class="img-fluid rounded-circle"
+            alt="<%= topic.author.name %>'s avatar"
+            height="35"
+            width="35"
+          />
+      
+      <form 
+      action="/topics/ <%= topics._id %>? _method=DELETE"
+      class="delete-form"
           method="POST"
         >
        <button type="submit">DELETE</button>
         </form>
-        </h4>
-        <p class="fs-7 fst-italic">
-          on <%= topic.createdAt.toLocaleDateString() %>
-        </p>
-        <p class="lead my-3"><%= topic.content %> </p>
-        <p>
-          <a
-            class="text-decoration-none text-light"
-            href="/topics/<%= topic._id %>"
-          >
-           Details 
-          </a>
         </p>
       </div>
     </section>
