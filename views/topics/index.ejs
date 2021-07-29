@@ -52,7 +52,7 @@
       </p>
       
       <form 
-      action="/topics/<%= topics._id %>? _method=DELETE"
+      action="/topics/<%= topics._id %><%= topic.author.avatar %><%= topic.author.name %><%= topic.title %>? _method=DELETE"
       class="delete-form"
       method="POST"
       >
