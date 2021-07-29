@@ -37,9 +37,7 @@
         class="text-decoration-none text-light"
         href="/topics/<%= topic._id %>"
         >
-        <div>
-          Details 
-        </div>
+        Details 
       </a>
       written by <%= topic.author.name %>
       <img
@@ -52,9 +50,8 @@
       <p class="fs-7 fst-italic">
         on <%= topic.createdAt.toLocaleDateString() %>
       </p>
-
       <form 
-      action="/topics/<%= topics._id %>?_method=DELETE"
+      action="/topics/ <%= topics._id %>? _method=DELETE"
       class="delete-form"
       method="POST"
       >
