@@ -10,7 +10,7 @@ const router = Router()
 router.get('/', isLoggedIn, topicsCtrl.index)
 router.post('/', isLoggedIn, topicsCtrl.create)
 router.get('/:id', isLoggedIn, topicsCtrl.show)
-router.delete('/topics:id', isLoggedIn, topicsCtrl.delete)
+router.delete('/:id', isLoggedIn, topicsCtrl.delete)
 router.put('/:id', isLoggedIn, topicsCtrl.update)
 router.get('/:id/edit', isLoggedIn, topicsCtrl.edit)
 
