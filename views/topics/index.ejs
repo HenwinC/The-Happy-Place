@@ -38,11 +38,11 @@
         href="/topics/<%= topic._id %>"
         >
         Details 
+        written by <%= topic.author.name %>
         <p class="fs-7 fst-italic">
           on <%= topic.createdAt.toLocaleDateString() %>
         </p>
       </a>
-      written by <%= topic.author.name %>
       <img
       src="<%= topic.author.avatar %>"
       class="img-fluid rounded-circle"
