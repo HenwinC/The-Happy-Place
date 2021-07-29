@@ -39,13 +39,6 @@
         class="text-decoration-none text-light"
         >
         <%= topic.author.name %>
-        <form 
-          action="/topics/ <%= topics._id %>? _method=DELETE"
-          class="delete-form"
-          method="POST"
-        >
-       <button type="submit">DELETE</button>
-        </form>
             <img
               src="<%= topic.author.avatar %>"
               class="img-fluid rounded-circle"
