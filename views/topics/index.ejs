@@ -33,12 +33,7 @@
         <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
       </a>
       <h4 class="mb-0 fs-5 fst-italic">
-        written by 
-        <a 
-        href="/profiles/<%= topic.author._id %>"
-        class="text-decoration-none text-light"
-        >
-        <%= topic.author.name %>
+        written by <%= topic.author.name %>
             <img
               src="<%= topic.author.avatar %>"
               class="img-fluid rounded-circle"
@@ -60,6 +55,10 @@
         </p>
         <p class="lead my-3"><%= topic.content %> </p>
         <p>
+          <a
+            class="text-decoration-none text-light"
+            href="/topics/<%= topic._id %>"
+          >
            Details 
           </a>
         </p>
