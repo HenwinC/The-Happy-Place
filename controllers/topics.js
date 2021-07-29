@@ -9,27 +9,22 @@ export {
   edit,
   deleteTopic as delete,
   addReply,
-  deleteReply
 }
-function deleteReply(req, res) {
-  Topic.findById(req.params.topicId)
-  .then(topic => {
-      topic.replies.remove({_id: req.params.replyId})
-      topic.save()
-      res.redirect(`/topics/${topic._id}`)
-  })
-}
+
 function addReply(req, res) {
   req.body.author = req.user.profile._id
   Topic.findById(req.params.id)
   .then(topic => {
       topic.replies.push(req.body)
+      console.log('gottem')
       topic.save()
       .then(() => {
-          res.redirect(`/topics/${topic._id}`)
+          res.redirect('/topics')
       })
   })
 }
+
+
 function update(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
@@ -38,6 +33,7 @@ function update(req, res) {
     res.redirect('/topics')
   })
 }
+
 
 function edit(req, res) {
   Topic.findById(req.params.id, function(err, topic) {
@@ -92,4 +88,3 @@ function index(req, res) {
     })
   })
 }
-// ghckhddkhchgkddkhgvhkgdtdkhghgfvgchgc

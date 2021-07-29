@@ -9,7 +9,6 @@ export {
 const replySchema = new Schema({
   author: { type: Schema.Types.ObjectId, ref: "Profile" },
   text: String,
-  topic: { type: Schema.Types.ObjectId, ref: "Topic"}
 }, {
   timestamps: true,
 })

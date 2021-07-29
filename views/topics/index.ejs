@@ -50,6 +50,11 @@
       <p class="fs-7 fst-italic">
         on <%= topic.createdAt.toLocaleDateString() %>
       </p>
+      <form action="/topics/<%= topic._id %>" method="POST">
+        <input type="text" name="text">
+     
+        <button>Reply</button> 
+       </form>
       <form 
       action="/topics/<%= topic._id %>?_method=DELETE"
       class="delete-form"
@@ -61,6 +66,5 @@
 </div>
 </section>
 <% }) %>
-
 </main>
 <%- include('../partials/footer') %>
