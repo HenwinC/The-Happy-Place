@@ -30,7 +30,7 @@ function edit(req, res) {
 }
 
 function deleteTopic(req, res){
-  Topic.findByIdAndDelete(req.params.id)  
+  Topic.findByIdAndDelete(req.body.id)  
   .then(()=>
   res.redirect("/topics")
   )
