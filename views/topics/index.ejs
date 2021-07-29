@@ -51,7 +51,7 @@
         on <%= topic.createdAt.toLocaleDateString() %>
       </p>
       <form 
-      action="/topics/<%= topics._id %>? _method=DELETE"
+      action="/topics/<%= topic._id %>?_method=DELETE"
       class="delete-form"
       method="POST"
       >
