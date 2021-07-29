@@ -5,34 +5,38 @@
   <form action="/topics" method="POST">
     <h2>
     Post A Topic
-    </h2>
-    <div class="mb-3 mx-5">
-      <label for="title-input" class="form-label">Topic</label>
-      <input 
-        type="text" 
-        class="form-control" 
-        id="title-input" 
-        placeholder="create A Topic"
-				name="title"
-      >
-    </div>
-    <div class="mb-3 mx-5">
-      <label for="post-content" class="form-label">Post</label>
-      <textarea name="content" class="form-control" id="post-content" rows="5"></textarea>
-    </div>
-    <button class="btn btn-primary ms-5" type="submit">Create Topic</button>
-  </form>
-  <h2 class="my-3">Topics</h2>
-  <% topics.forEach((topic, idx) => { %>
-    <section class="p-4 p-md-5 mb-4 text-white rounded bg-dark mx-4">
-      <div class="col-md-8 text-light" px-0>
-        <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
-      </a>
-      <h4 class="mb-0 fs-5 fst-italic">
+  </h2>
+  <div class="mb-3 mx-5">
+    <label for="title-input" class="form-label">Topic</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    id="title-input" 
+    placeholder="create A Topic"
+    name="title"
+    >
+  </div>
+  <div class="mb-3 mx-5">
+    <label for="post-content" class="form-label">Post</label>
+    <textarea name="content" class="form-control" id="post-content" rows="5"></textarea>
+  </div>
+  <button class="btn btn-primary ms-5" type="submit">Create Topic</button>
+</form>
+<h2 class="my-3">Topics</h2>
+<% topics.forEach((topic, idx) => { %>
+  <section class="p-4 p-md-5 mb-4 text-white rounded bg-dark mx-4">
+    <div class="col-md-8 text-light" px-0>
+      <h3 class="fs-1 fst-italic"><%= topic.title %></h3>
+    </a>
+    <h4 class="mb-0 fs-5 fst-italic">
         
       </h4>
       <p class="lead my-3"><%= topic.content %> </p>
       <p>
+        <% topic.replies.forEach(reply => { %>
+          <h3><%= topic.author.name %></h3>
+         <h3><%= reply.text %> </h3>
+        <% }) %>
         <a
         class="text-decoration-none text-light"
         href="/topics/<%= topic._id %>"
@@ -66,5 +70,7 @@
 </div>
 </section>
 <% }) %>
+
+
 </main>
 <%- include('../partials/footer') %>

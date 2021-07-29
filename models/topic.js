@@ -17,7 +17,7 @@ const topicSchema = new Schema({
   title: String,
   content: String,
   author: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  replies: [replySchema]
+  replies: [ replySchema ]
 },{
   timestamps: true,
 })
