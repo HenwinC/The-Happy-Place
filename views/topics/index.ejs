@@ -54,6 +54,13 @@
               width="35"
             />
           </a>
+          <form 
+          action="/topics/ <%= topics._id %>? _method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+       <button type="submit">DELETE</button>
+        </form>
         </h4>
         <p class="fs-7 fst-italic">
           on <%= topic.createdAt.toLocaleDateString() %>
