@@ -55,7 +55,7 @@
             <button class="btn btn-light">Reply</button> 
            </form>
           <% topic.replies.forEach(reply => { %>
-            <h3><%= reply.text %></h3><h6><%= topic.author.name %></h6>
+            <h3><%= reply.text %></h3><h6><%= reply.createdAt.toLocaleDateString() %></h6>
           
           <% }) %>
       </div>

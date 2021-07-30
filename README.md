@@ -5,7 +5,8 @@ https://happy-place-project.herokuapp.com/
 https://trello.com/b/03Va1Gy2/the-happy-place
 
 ## About The-Happy-Place
-This app was built to connect and chat with friends about diffrent topics.
+This app was built to chat with people about diffrent topics. 
+Replies are anonymous and every one has the ability to delete a post if they find the post not entertaining.
 
 ## instructions
 
@@ -20,25 +21,30 @@ This app was built to connect and chat with friends about diffrent topics.
 
 1. HTML
 2. CSS
-3. JavaScript
-4. EJS
-5. NodeJS
-6. Bootstrap
-7. MongoDB
-8. Mongoose
-9. Git
-10. HTML
-11. Heroku
+3. GoogleOAuth
+4. JavaScript
+5. EJS
+6. NodeJS
+7. Bootstrap
+8. MongoDB
+9. Mongoose
+10. Git
+11. HTML
+12. Heroku
 
-## Credits
+## Credits/ShoutOuts
 
-1. Shout out to 
-2. CSS By 
+1. TA Squad 
+2. Blake Romano found at https://www.linkedin.com/in/blakeromano/
+3. CSS By https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim
 
 ## Future Plans
 
 1. Ability to add friends
 2. Direct messaging
+3. Add A dads joke page
+4. See Users that are currently online
+
 
 
 
