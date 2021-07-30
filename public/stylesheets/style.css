@@ -1,3 +1,17 @@
+#submit{text-align: center;
+
+}
+#Details{
+  text-align: right;
+}
+#Delete{
+  text-align: right;
+}
+.reply{ text-align: left;
+  color:#6c3 ;
+
+}
+
 html {
   height:100%;
 }

@@ -7,7 +7,7 @@
 </div>
 
 <main class="container">
-  <form action="/topics" method="POST">
+  <form id='submit'action="/topics" method="POST">
     <h2>
       The Happy Place
   </h2>
@@ -21,55 +21,58 @@
     name="title"
     >
   </div>
-  <div class="mb-3 mx-5">
+  <div class="mb-3" style="max-width: 18rem;">
     <label for="post-content" class="form-label"></label>
     <textarea name="content" class="form-control" id="post-content" rows="5"></textarea>
   </div>
+  
   <button class="btn btn-primary ms-4" type="submit">Create Topic</button>
 </form>
 <h2 class="my-3">Topics</h2>
 
 <% topics.forEach((topic, idx) => { %>
-  <div class="card text-white bg-primary">
-    <h2><%= topic.title %></h2>
+  <div class=" w-50 card text-white bg-primary ";>
+    <div class="card-header"><h3><%= topic.title %></h3></div>
+    <h3 class="card-title"><%= topic.content %> </h3>
     <div class="card-body">
-      <h3 class="card-title"><%= topic.content %> </h3>
       <% topic.replies.forEach(reply => { %>
         <h3><%= reply.author.name %></h3>
         <h3><%= reply.text %> </h3>
         <% }) %>
         <div>
-          
         </div>
-        <p class="card-text">written by <%= topic.author.name %>
-          <img
-          src="<%= topic.author.avatar %>"
-          class="img-fluid rounded-circle"
-          alt="<%= topic.author.name %>'s avatar"
-          height="35"
-          width="35"
-          /> .</p>
-          <p class="card-text">on <%= topic.createdAt.toLocaleDateString() %>.</p>
-          <button class="btn btn-dark"> <a
+          <button class="btn btn-dark" id="Details"> <a
             class="text-decoration-none text-light"
             href="/topics/<%= topic._id %>"
             >Details </a> </button>
-          <form action="/topics/<%= topic._id %>" method="POST">
+
+          <form class='reply' action="/topics/<%= topic._id %>" method="POST">
             <input type="text" name="text">
             <button class="btn btn-light">Reply</button> 
            </form>
-          <form 
+
+          <form id="Delete"
           action="/topics/<%= topic._id %>?_method=DELETE"
           class="delete-form"
           method="POST"
           >
           <button type="submit" class="btn btn-danger">DELETE</button>
         </form>
+        <div class="card-header"><h3>Topic written by <%= topic.author.name %>.</h3> <p class="card-text">on <%= topic.createdAt.toLocaleDateString() %>.</p></div>
       </div>
     </div>
-    <div class="card text-white bg-secondary">
   
 <% }) %>
+<div>
+  
+</div>
+<div class="w-50 card text-white bg-primary mb-3">
+  <div class="card-header"><h3>Header</h3></div>
+  <div class="card-body">
+    <h2 class="card-title">Primary card title</h2>
+    <p class="card-text">SjdshjsdhlkjhDFKJHdfjkhFLKJHdljfkhjDFHJkhdfjHFJhfdkjhDFJhfkjhFJKhfjkhSFJKHjsdkfhkjHFLKjhdfjkhDFKHlkjsdfhkljsHFLKJhsdf</p>
+  </div>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
