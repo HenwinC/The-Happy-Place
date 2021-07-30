@@ -15,7 +15,7 @@ Replies are anonymous and every one has the ability to delete a post if they fin
 3. Reply to friends!
 
 ## Web App Screenshot
-
+![The-Happy-Place](https://user-images.githubusercontent.com/82171107/127662479-fe5b152b-8269-41c7-b28f-6286a4e09af0.png)
 
 ## Technologies Implemented
 
