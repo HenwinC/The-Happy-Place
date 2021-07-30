@@ -1,3 +1,9 @@
+#topic{
+  text-align: center;
+}
+#contents{
+  text-align: center;
+}
 #submit{text-align: center;
 
 }
@@ -7,8 +13,9 @@
 #Delete{
   text-align: right;
 }
-.reply{ text-align: left;
-  color:#6c3 ;
+.reply{ text-align: right;
+  color: #6c3;
+  
 
 }
 
@@ -86,7 +93,7 @@ html {
 }
 
 body {
-  background-color: black;
+  background-color:blue;
   background-image: var(--primary-gradient);
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",

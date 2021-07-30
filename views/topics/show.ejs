@@ -1,15 +1,18 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+</div>
+
 </head>
 <body>
-  <h1><%= topic.title %> </h1>
   <div class="card">
     <div class="card-body">
-      <h3 class="card-title"><%= topic.title %></h3>
-      <p class="card-text"><%= topic.content %> </p>
+      <h2 class="card-title"><%= topic.title %></h2>
+      <h4 class="card-text"><%= topic.content %> </h4>
       <p class="card-text"><small class="text-muted">Posted By: <%= topic.author.name %></small></p>
-      <p class="card-text"><small class="text-muted"><%= topic.date %> </small></p>
         <a href="/topics/<%= topic._id %>/edit">
           <button type="submit" class="btn btn-primary">Edit</button>
         </a>

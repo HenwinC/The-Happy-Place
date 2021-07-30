@@ -16,7 +16,6 @@ function addReply(req, res) {
   Topic.findById(req.params.id)
   .then(topic => {
       topic.replies.push(req.body)
-      console.log('gottem')
       topic.save()
       .then(() => {
           res.redirect('/topics')
