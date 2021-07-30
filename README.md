@@ -6,7 +6,7 @@ https://trello.com/b/03Va1Gy2/the-happy-place
 
 ## About The-Happy-Place
 This app was built to chat with people about diffrent topics. 
-Replies are anonymous and every one has the ability to delete a post if they find the post not entertaining.
+Replies are anonymous and every one has the ability to delete and edit a post if they find the post not entertaining/triggering.
 
 ## instructions
 
